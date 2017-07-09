@@ -1,14 +1,14 @@
 class InsufficientMP(Exception):
-	pass
+    pass
 
 class InvalidTarget(Exception):
-	pass
+    pass
 
 class InvalidCommand(Exception):
-	pass
+    pass
 
 class Defeat(Exception):
-	pass
+    pass
 
 class Victory(Exception):
-	pass
+    pass
