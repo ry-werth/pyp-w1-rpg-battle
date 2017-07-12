@@ -96,7 +96,7 @@ class Dragon(Monster):
     def take_damage(self, damage):
         damage = damage - 5
         if damage > 0:
-            super().take_damage(damage)
+            super(Dragon, self).take_damage(damage)
 
     def tail_swipe(self, target):
         """
@@ -116,7 +116,7 @@ class RedDragon(Dragon):
     STRENGTH_MULTIPLIER = 2
     INTELLIGENCE_MULTIPLIER = 1.5
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(RedDragon, self).__init__(*args, **kwargs)
         self.fight_sequence = deque(['fire_breath', 'tail_swipe', 'fight'])
 
     def fire_breath(self, target):
@@ -137,7 +137,7 @@ class GreenDragon(Dragon):
     STRENGTH_MULTIPLIER = 1.5
     SPEED_MULTIPLIER = 1.5
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(GreenDragon, self).__init__(*args, **kwargs)
         self.fight_sequence = deque(['poison_breath', 'tail_swipe', 'fight'])
     def poison_breath(self, target):
         """
@@ -165,7 +165,7 @@ class Undead(Monster):
         """
         damage = int(self.intelligence * 1.5)
         target.take_damage(damage)
-        super().heal_damage(damage)
+        super(Undead, self).heal_damage(damage)
         message = self._attack_message(target, damage, 'drain life')
         message += '{monster} heals for {healing}!\n'.format(monster=type(self).__name__,
                                                              healing=damage)
@@ -181,7 +181,7 @@ class Vampire(Undead):
     INTELLIGENCE_MULTIPLIER = 2
     BASE_HP = 30
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(Vampire, self).__init__(*args, **kwargs)
         self.fight_sequence = deque(['fight', 'bite', 'life_drain'])
     def bite(self, target):
         """
@@ -212,7 +212,7 @@ class Skeleton(Undead):
     SPEED_MULTIPLIER = 0.5
     INTELLIGENCE_MULTIPLIER = 0.25
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(Skeleton, self).__init__(*args, **kwargs)
         self.fight_sequence = deque(['bash', 'fight', 'life_drain'])
     def bash(self, target):
         """
@@ -243,7 +243,7 @@ class Troll(Humanoid):
     CONSTITUTION_MULTIPLIER = 1.5
     BASE_HP = 20
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(Troll, self).__init__(*args, **kwargs)
         self.fight_sequence = deque(['slash', 'fight', 'regenerate'])
     def regenerate(self, *args):
         """
@@ -263,7 +263,7 @@ class Orc(Humanoid):
     STRENGTH_MULTIPLIER = 1.75
     BASE_HP = 16
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(Orc, self).__init__(*args, **kwargs)
         self.fight_sequence = deque(['blood_rage', 'slash', 'fight'])
     def blood_rage(self, target):
         """
