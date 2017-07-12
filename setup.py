@@ -30,7 +30,7 @@ setup(
     author='rmotr.com',
     author_email='questions@rmotr.com',
     license='CC BY-SA 4.0 License',
-    packages=['rpg'],
+    packages=['rpg_battle'],
     maintainer='rmotr.com',
     tests_require=[
         'pytest==3.0.6',

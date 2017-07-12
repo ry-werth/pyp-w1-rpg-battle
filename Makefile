@@ -2,7 +2,7 @@
 
 TAG="\n\n\033[0;32m\#\#\# "
 END=" \#\#\# \033[0m\n"
-PROJECT_PACKAGE=rpg
+PROJECT_PACKAGE=rpg_battle
 
 
 test:
