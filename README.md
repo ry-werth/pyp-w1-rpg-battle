@@ -5,6 +5,12 @@ Today we will be creating a traditional RPG (*role-playing game*) battle system 
 
 We will be breaking the project down into three primary parts: **Heroes**, **Monsters**, and **Battles**.
 
+**Heroes** represent player characters, they can be one of four classes, **Warrior**, **Mage**, **Cleric**, or **Rogue**. Depinding on a hero's class they will have different stats and abilities, for example a Warrior is stronger and more durable than a mage and therefore they have a higher *strength* and *constitution*. These statistics effect how their various abilities work. As heroes defeat monsters they gain xp (experience points) and if they gain enough experience they level up and become stronger.
+
+**Monsters** are what the heroes fight. They can be classified into monster families (like *dragons* and *undead*) as well as individual monster types within those families (like Red Dragons and Vampires). Monsters have their own abilities depending on a combination of their family and type.
+
+**Battles** This is what brings everything together. Participants will perform actions in order of their `speed` attribute - faster units go before slower units. Hero abilities are user determined, monster abilities are used according to their *command queue* (described below) and target heroes randomly. Battle continues until either all the heroes or all the monsters are wiped out.
+
 **Heroes**
 ======
 > **Features common to all Heroes:**
